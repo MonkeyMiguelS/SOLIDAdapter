@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SOLID Adapter</string>
+    <string name="text_age">%1$s años</string>
+    <string name="label_goalkeeper">Portero</string>
+    <string name="label_defender">Defensa</string>
+    <string name="label_midfielder">Centrocampista</string>
+    <string name="label_forward">Delantero</string>
+    <string name="label_empty">(sin definir)</string>
+    <string name="label_people">%1$s espectadores</string>
+</resources>

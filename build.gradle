@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects {
+    ext {
+        //Android Config
+        supportLibraryVersion = "24.2.0"
+
+        androidBuildToolsVersion = "25.0.1"
+        androidMinSdkVersion = 15
+        androidTargetSdkVersion = 25
+        androidCompileSdkVersion = 25
+        androidApplicationId = "com.jmperezra.solidadapter"
+
+        //Android Libraries
+        libSupportAppCompatv7 = "com.android.support:appcompat-v7:$supportLibraryVersion"
+        libSupportv4 = "com.android.support:support-v4:$supportLibraryVersion"
+        libSupportRecyclerView = "com.android.support:recyclerview-v7:$supportLibraryVersion"
+        libSupportDesign = "com.android.support:design:$supportLibraryVersion"
+        libSupportAnnotations = "com.android.support:support-annotations:$supportLibraryVersion"
+
+        //** Third Party Libraries **
+
+        //Gradle: Injection Dependencies
+        libDaggerCompiler = 'com.google.dagger:dagger-compiler:2.8'
+        libDagger = 'com.google.dagger:dagger:2.8'
+        libDaggerAnnotation = 'org.glassfish:javax.annotation:10.0-b28'
+
+        //Butterknife
+        libButterKnife = "com.jakewharton:butterknife:7.0.1"
+    }
+
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

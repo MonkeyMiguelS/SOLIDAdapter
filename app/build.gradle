@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.jmperezra.visitoradapter"
+        minSdkVersion 11
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Android Supports
+    compile parent.ext.libSupportv4
+    compile parent.ext.libSupportRecyclerView
+    compile parent.ext.libSupportDesign
+    compile parent.ext.libSupportAppCompatv7
+    compile parent.ext.libSupportAnnotations
+
+    //Thirds Party
+    apt parent.ext.libDaggerCompiler
+    compile parent.ext.libDagger
+    provided parent.ext.libDaggerAnnotation
+
+    compile parent.ext.libButterKnife
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    testCompile 'junit:junit:4.12'
+}
