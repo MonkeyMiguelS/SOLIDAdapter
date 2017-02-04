@@ -15,12 +15,12 @@ import com.jmperezra.solidadapter.view.football.viewmodels.TeamViewModel;
 
 import javax.inject.Inject;
 
-public class TeamFootballTypeViewModel implements TypeViewModelFactory {
+public class FootballTypeViewModel implements TypeViewModelFactory {
 
     private FootballPresenter presenter;
 
     @Inject
-    public TeamFootballTypeViewModel(FootballPresenter presenter) {
+    public FootballTypeViewModel(FootballPresenter presenter) {
         this.presenter = presenter;
     }
 

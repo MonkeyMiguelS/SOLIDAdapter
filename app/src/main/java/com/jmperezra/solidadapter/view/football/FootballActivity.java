@@ -10,7 +10,7 @@ import com.jmperezra.solidadapter.app.FootballApplication;
 import com.jmperezra.solidadapter.app.di.modules.FootballModule;
 import com.jmperezra.solidadapter.view.football.adapter.PlayerAdapter;
 import com.jmperezra.solidadapter.view.football.visitable.ItemVisitable;
-import com.jmperezra.solidadapter.view.football.visitable.TeamFootballTypeViewModel;
+import com.jmperezra.solidadapter.view.football.visitable.FootballTypeViewModel;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class FootballActivity extends AppCompatActivity implements FootballView{
     FootballPresenter presenter;
 
     @Inject
-    TeamFootballTypeViewModel teamFootballTypeViewModel;
+    FootballTypeViewModel footballTypeViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class FootballActivity extends AppCompatActivity implements FootballView{
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         viewListPlayers.setLayoutManager(mLayoutManager);
 
-        playerAdapter = new PlayerAdapter(teamFootballTypeViewModel);
+        playerAdapter = new PlayerAdapter(footballTypeViewModel);
         viewListPlayers.setAdapter(playerAdapter);
     }
 

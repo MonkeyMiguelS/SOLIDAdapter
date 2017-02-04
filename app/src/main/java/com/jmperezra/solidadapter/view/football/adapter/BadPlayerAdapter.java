@@ -71,8 +71,9 @@ public class BadPlayerAdapter extends RecyclerView.Adapter<BaseViewHolder>{
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-        //holder.renderName();
-        //holder.renderAddress();
+        ItemVisitable item = viewModels.get(position);
+        //holder.renderName(item.getName());
+        //holder.renderAddress(item.getAddress());
     }
 
     @Override
